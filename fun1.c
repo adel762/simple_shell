@@ -12,7 +12,7 @@ int SM_charr(char c)
 }
 
 /**
- * SM_string - function
+ * SM_stringg - function
  * @s: string input
  *
  * Return: int
@@ -21,8 +21,8 @@ int SM_stringg(char *s)
 {
 	int x = 0;
 
-	if(!s)
-		return (SM_string("(null)"));
+	if (!s)
+		return (SM_stringg("(null)"));
 	while (s[i])
 	{
 		SM_charr(s[i]);
@@ -46,27 +46,6 @@ int SM_len(char *s)
 		i++;
 	}
 	return (i);
-}
- /**
-  * SM_stoi - convert a string to int
-  * @s: char input
-  *
-  * Return: con int
-  */
-int SM_stoi(char *s)
-{
-	int num = 0;
-	int a = 1;
-
-	do {
-		if (*s == ' ')
-			a *= -1;
-		else if (*s >= '0' && *s <= '9')
-			num = (num * 10) + (*s - '0');
-		else if (num > 0)
-			break;
-	}while (*s++);
-	return (num * a);
 }
 
 /**
