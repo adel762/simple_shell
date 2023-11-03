@@ -13,4 +13,9 @@
 #include <linux/limits.h>
 extern char **environ;
 
+int SM_charr(char c);
+int SM_stringg(char *s);
+int SM_len(char *s);
+int SM_stoi(char *s);
+
 #endif

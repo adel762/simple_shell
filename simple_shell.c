@@ -15,11 +15,11 @@ int main(int ac, char **av)
 	do {
 		conn = malloc(ml * (ac / ac));
 		if (isatty(STDIN_FILENO) == 1)
-			SM_string(pro);
+			SM_stringg(pro);
 		if (fgets(conn, ml, stdin) == NULL)
 		{
 			if (isatty(STDIN_FILENO) == 1)
-				SM_string("\n");
+				SM_stringg("\n");
 			free(conn);
 			break;
 		}
