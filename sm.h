@@ -21,5 +21,6 @@ void errors(int er, char *command);
 int SM_scm(char *s1, char *s2);
 char *SM_strcopy(char *str);
 char *SM_scat(char *d, char *s);
+char *_strtok(char *str, const char *d);
 
 #endif
