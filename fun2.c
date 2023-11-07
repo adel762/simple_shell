@@ -32,3 +32,22 @@ int SM_stoi(char *s)
 
 	return (o);
 }
+/**
+ * errors - print error
+ * @er: int
+ * @com: input char the command
+ *
+ * Return: null
+ */
+void errors(int er, char *com)
+{
+	char *erro = handle_int(er);
+
+	write(2, "./hsh: ", 7);
+	write(2, erro, SM_len(erro));
+	write(2, ": ", 2);
+	write(2, com,  SM_len(com));
+	write(2, ": not found\n", SM_len(": not found\n"));
+	free(com);
+	free(erro);
+}

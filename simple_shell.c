@@ -1,32 +1,51 @@
 #include "sm.h"
 
 /**
- * main - simple_shell program
- * @ac: int input 1
- * @av: char input 2
+ * main - main finction
  *
- * Return: int var
-*/
-int main(int ac, char **av)
+ * Return: 0 success
+ */
+
+int main(void)
 {
-	char *conn;
-	char pro[] = "$ ";
+	char **args = NULL, *path = NULL, *com;
+	int status = 0;
+	int er = 0;
+	int a = isatty(STDIN_FILENO);
 
-	do {
-		conn = malloc(ml * (ac / ac));
-		if (isatty(STDIN_FILENO) == 1)
-			SM_stringg(pro);
-		if (fgets(conn, ml, stdin) == NULL)
+	while (1)
+	{
+		er++;
+		if (a)
+			SM_stringg("$ ");
+		com = malloc(5000000);
+		if (fgets(com, 5000000, stdin) == NULL)
 		{
-			if (isatty(STDIN_FILENO) == 1)
-				SM_stringg("\n");
-			free(conn);
-			break;
+			free(com);
+				break;
 		}
-		com[strcspn(conn, "\n")] = '\0';
-		_ex(environ, &conn, av);
-		free(conn);
-	} while (1);
-return (0);
+		if (com[SM_len(com) - 1] == '\n')
+			com[SM_len(com) - 1] = '\0';
+		if (SM_len(com) == 0)
+		{
+			free(com);
+			continue;
+		}
+		args = fill(com);
+		if (_check(args, status, com))
+		{
+			free_grid(args), free(com);
+			continue;
+		}
+		path = location(args[0]);
+		if (path == NULL)
+		{
+			errors(er, com);
+			free_grid(args);
+			continue;
+		}
+		free(args[0]), args[0] = path, free(com);
+		status = _fork(status, path, args, er);
+	}
+	return (status);
 }
-
