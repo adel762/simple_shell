@@ -30,6 +30,12 @@ char *our_get_line(void);
 void f_grid(char **g);
 void errors(int er, char *com);
 void fill(char ***arg);
+void print_information(char **inform);
+extern char **inform;
+int _putstring(char *s);
+int _putchar(char c);
+int _check(char **argum, int stat, char *commd);
+int compare_str(char *str1, char *str2);
 int fork(int status, char *path,  char **args, int err);
 
 #endif
