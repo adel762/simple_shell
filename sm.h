@@ -23,17 +23,10 @@ char *SM_strcopy(char *str);
 char *SM_scat(char *d, char *s);
 char *_strtok(char *str, const char *d);
 char *SM_string_copy(char *dest, char *src);
-<<<<<<< HEAD
 void f_grid(char **g);
 void errors(int er, char *com);
-=======
 void fill(char ***arg);
-<<<<<<< HEAD
 int fork(int status, char *path,  char **args, int err);
 void free_grid(char **grid);
-
-=======
->>>>>>> 62c1bcfaa60a7cb99b123eec495ad9cdc72d3a59
->>>>>>> 591a0c73bdb034ed887bcab12332729e640da2eb
 
 #endif
