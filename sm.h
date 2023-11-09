@@ -23,6 +23,7 @@ char *SM_strcopy(char *str);
 char *SM_scat(char *d, char *s);
 char *_strtok(char *str, const char *d);
 char *SM_string_copy(char *dest, char *src);
+char *our_get_line(void);
 <<<<<<< HEAD
 void f_grid(char **g);
 void errors(int er, char *com);
