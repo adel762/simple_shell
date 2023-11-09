@@ -1,40 +1,37 @@
 #include "sm.h"
 
 /**
- * fork - function that handle fort
- * @com: char input1 command
- * @args: char input2 arguments
- * @now: int now
- * @argv: char input3 arg
- * @p: pointer
+ * fork - function that handle fork
+ * @status: int input
+ * @path: the path
+ * @args: array of char
+ * @err: int input error message
  *
  * Return: int
- */
-int fork(char *com, char **args, char **argv, int now, char *p)
+*/
+int fork(int status, char *path,  char **args, int err)
 {
-	char *s;
-	int st;
-	pid_t pid = fork();
+	char *i;
+	pid_t id = fork();
 
-	argv = argv;
-	if (pid == 0)
+	if (id == 0)
 	{
-		fre(argv);
-		free(p);
-		execve(com, args, environ);
-		s = to_st(now);
+		execve(path, args, environ);
+		i = handle_int(err);
 		write(2, "./hsh: ", 7);
-		write(2, s, SM_len(s));
+		write(2, i, SM_len(in));
 		write(2, ": ", 2);
-		write(2, com, SM_len(com));
+		write(2, path, SM_len(path));
 		write(2, ": No such file or directory\n", 28);
-		fre(args);
-		free(s);
+		free_grid(args);
+		free(i);
 		exit(127);
 	}
 	else
 	{
-		waitpid(pid, &st, 0);
+		waitpid(id, &status, 0);
+		status = WEXITSTATUS(status);
+		f_grid(args);
 	}
-	return (WEXITSTATUS(st));
+	return (status);
 }

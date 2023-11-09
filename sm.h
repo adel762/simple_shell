@@ -24,6 +24,8 @@ char *SM_scat(char *d, char *s);
 char *_strtok(char *str, const char *d);
 char *SM_string_copy(char *dest, char *src);
 void fill(char ***arg);
-int fork(char *com, char **args, char **argv, int now, char *p);
+int fork(int status, char *path,  char **args, int err);
+void free_grid(char **grid);
+
 
 #endif
