@@ -1,8 +1,8 @@
 #include "sm.h"
 
 /**
+ * our_get_line - get line function
  *
- * our_get_line - get line function using read
  * Return: the input as get line function
  */
 
