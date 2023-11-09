@@ -17,7 +17,6 @@ int SM_charr(char c);
 int SM_stringg(char *s);
 int SM_len(char *s);
 int SM_stoi(char *s);
-void errors(int er, char *command);
 int SM_scm(char *s1, char *s2);
 char *SM_strcopy(char *str);
 char *SM_scat(char *d, char *s);
