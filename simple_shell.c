@@ -34,18 +34,18 @@ int main(void)
 		args = fill(com);
 		if (_check(args, status, com))
 		{
-			free_grid(args), free(com);
+			f_grid(args), free(com);
 			continue;
 		}
 		path = location(args[0]);
 		if (path == NULL)
 		{
 			errors(er, com);
-			free_grid(args);
+			f_grid(args);
 			continue;
 		}
 		free(args[0]), args[0] = path, free(com);
-		status = _fork(status, path, args, er);
+		status = fork(status, path, args, er);
 	}
 	return (status);
 }
