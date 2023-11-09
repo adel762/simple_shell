@@ -27,6 +27,5 @@ void f_grid(char **g);
 void errors(int er, char *com);
 void fill(char ***arg);
 int fork(int status, char *path,  char **args, int err);
-void free_grid(char **grid);
 
 #endif
