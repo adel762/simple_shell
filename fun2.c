@@ -36,8 +36,6 @@ int SM_stoi(char *s)
  * errors - print error
  * @er: int
  * @com: input char the command
- *
- * Return: null
  */
 void errors(int er, char *com)
 {
