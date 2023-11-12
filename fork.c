@@ -9,7 +9,7 @@
  *
  * Return: int
 */
-int fork(int status, char *path,  char **args, int err)
+int fork(int status, char *path, char **args, int err)
 {
 	char *i;
 	pid_t id = fork();
@@ -19,7 +19,7 @@ int fork(int status, char *path,  char **args, int err)
 		execve(path, args, environ);
 		i = handle_int(err);
 		write(2, "./hsh: ", 7);
-		write(2, i, SM_len(in));
+		write(2, i, SM_len(i));
 		write(2, ": ", 2);
 		write(2, path, SM_len(path));
 		write(2, ": No such file or directory\n", 28);
