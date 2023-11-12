@@ -1,14 +1,14 @@
 #include "sm.h"
 
 /**
- * fork - function that handle fork
+ * _fork - function that handle fork
  * @status: int input
  * @path: the path
  * @args: array of char
  * @err: int input error message
  *
  * Return: int
-*/
+ */
 int _fork(int status, char *path, char **args, int err)
 {
 	char *i;
