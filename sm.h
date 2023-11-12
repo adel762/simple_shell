@@ -29,6 +29,5 @@ void errors(int er, char *com);
 char **fill(char *com);
 void print_information(char **inform);
 int _check(char **argum, int stat, char *commd);
-int fork(int status, char *path,  char **args, int err);
 
 #endif
