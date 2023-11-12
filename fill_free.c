@@ -21,24 +21,29 @@ void f_grid(char **g)
 }
 
 /**
- * fill - function
+ * fill - fill arg array with command
+ * @com : the commant
  *
- * @arg: char input
- *
- */
-void fill(char ***arg)
+ * Return: array of string
+*/
+char **fill(char *com)
 {
-	int i = 0, z = 0;
-	char *s, *k;
+	int i = 0;
+	char *s = NULL;
+	char x = ' ';
+	char **arr = malloc(sizeof(char *) * 500000);
 
-	for (i = 0; environ[i] != NULL; i++)
+	s = _strtok(com, x);
+	arr[0] = malloc(sizeof(char) * SM_len(s) + 5);
+	SM_string_copy(arr[0], s);
+	i++;
+	while ((s = _strtok(NULL, x)))
 	{
-		s = environ[i];
-		(*arg)[i] = malloc(sizeof(char) * (SM_len(s) + 1));
-		k = (*arg)[i];
-		for (z = 0; s[z] != '\0'; z++)
-			k[z] = s[z];
-		k[z] = '\0';
+		arr[i] = malloc(sizeof(char) * SM_len(s) + 5);
+		SM_string_copy(arr[i], s);
+		i++;
 	}
-	(*arg)[i] = NULL;
+	arr[i] = NULL;
+	free(s);
+	return (arr);
 }
