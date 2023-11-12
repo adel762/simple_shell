@@ -9,7 +9,7 @@
  *
  * Return: int
 */
-int fork(int status, char *path, char **args, int err)
+int _fork(int status, char *path, char **args, int err)
 {
 	char *i;
 	pid_t id = fork();
