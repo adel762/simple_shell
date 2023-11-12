@@ -26,7 +26,7 @@ char *SM_string_copy(char *dest, char *src);
 char *our_get_line(void);
 void f_grid(char **g);
 void errors(int er, char *com);
-void fill(char ***arg);
+char **fill(char *com);
 void print_information(char **inform);
 int _check(char **argum, int stat, char *commd);
 int fork(int status, char *path,  char **args, int err);
