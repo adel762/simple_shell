@@ -19,6 +19,8 @@ int SM_stringg(char *s);
 int SM_len(char *s);
 int SM_stoi(char *s);
 int SM_scm(char *s1, char *s2);
+char *place(char *order);
+char *SM_strdup(char *str);
 char *SM_strcopy(char *str);
 char *SM_scat(char *d, char *s);
 char *_strtok(char *str, const char *d);
