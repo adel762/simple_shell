@@ -23,7 +23,7 @@ int fork(int status, char *path,  char **args, int err)
 		write(2, ": ", 2);
 		write(2, path, SM_len(path));
 		write(2, ": No such file or directory\n", 28);
-		free_grid(args);
+		f_grid(args);
 		free(i);
 		exit(127);
 	}
