@@ -38,9 +38,12 @@ int SM_stringg(char *s)
  */
 int SM_len(char *s)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0; *s != '\0'; s++)
+	if (!s)
+		return (0);
+
+	while (*s++)
 	{
 		i++;
 	}
