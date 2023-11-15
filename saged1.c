@@ -13,7 +13,7 @@ char *place(char *order)
 
 	if (!pth1)
 		return (NULL);
-	pth1copy = SM_strdup(pth1);
+	pth1copy = SM_strcopy(pth1);
 	if (!pth1copy)
 		return (NULL);
 	pathtoken = _strtok(pth1copy, ':');
@@ -33,6 +33,6 @@ char *place(char *order)
 	}
 	free(pathcopy);
 	if (stat(order, &afft) == 0)
-		return (SM_strdup(order));
+		return (SM_strcopy(order));
 	return (NULL);
 }
