@@ -8,7 +8,7 @@
 */
 char *miss(char *string, int g)
 {
-	return (*SM_scat(string, SM_handle(g)));
+	return (SM_scat(string, SM_handle(g)));
 }
 
 /**
@@ -18,18 +18,22 @@ char *miss(char *string, int g)
  */
 char *SM_handle(int l)
 {
-	char u[19], char  *fresh;
+	char u[19];
+	char  *fresh;
 	int i = 0, d = 0;
 
 	while (l != 0)
 	{
 		u[i] = l % 10 + '0';
-		i++, l /= 10;
+		i++;
+		l/= 10;
 	}
-	fresh = malloc(i + 5), i--;
+	fresh = malloc(i + 5);
+	i--;
 	while (i >= 0)
 	{
-		fresh[n] = u[i], d++;
+		fresh[d] = u[i];
+		d++;
 		i--;
 	}
 	fresh[d] = '\0';

@@ -27,12 +27,12 @@ char *SM_string_copy(char *dest, char *src);
 void f_grid(char **g);
 void errors(int er, char *com);
 char **fill(char *com);
-void print_information(char **inform);
+void print_information(char **environ);
 int _check(char **argum, int stat, char *commd);
 int _fork(int status, char *path, char  **args, int err);
 char *place(char *order);
 int SM_strcomp(char *strf, char *stre, size_t p);
 char *our_get_line(void);
-char SM_takeenveloped(char *firstname);
+char *SM_takeenveloped(char *firstname);
 
 #endif

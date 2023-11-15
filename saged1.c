@@ -6,10 +6,10 @@
  */
 char *place(char *order)
 {
-	char *pth1 = SM_takeenveloped("PATH"), *pth1copy = NULL;
+	char *pth1 = SM_takeenveloped("PATH");
 	unsigned int s1, s2;
 	struct stat afft;
-	char *pathtoken = NULL, *filepath = NULL;
+	char *pathtoken = NULL, *filepath = NULL, *pth1copy = NULL;
 
 	if (!pth1)
 		return (NULL);
@@ -24,15 +24,15 @@ char *place(char *order)
 		filepath = malloc(s1 + s2 + 8);
 		if (!filepath)
 		{
-			free(pathcopy);
+			free(pth1copy);
 			return (NULL);
 		}
-		SM_strcopy(filepath, pathtoken);
+		SM_string_copy(filepath, pathtoken);
 		SM_scat(filepath, "/");
 		SM_scat(filepath, order);
 		if (stat(filepath, &afft) == 0)
 		{
-			free(pathcopy);
+			free(pth1copy);
 			return (filepath);
 		}
 		else
@@ -41,7 +41,7 @@ char *place(char *order)
 			pathtoken = _strtok(NULL, ':');
 		}
 	}
-	free(pathcopy);
+	free(pth1copy);
 	if (stat(order, &afft) == 0)
 		return (SM_strcopy(order));
 	return (NULL);

@@ -2,17 +2,15 @@
 
 /**
  * print_information - print the inform
- * @inform: the array
- *
- * Return: 0;
+ * @environ: the array
  */
-void print_information(char **inform)
+void print_information(char **environ)
 {
 	int l = 0;
 
-	while (inform[i])
+	while (environ[l])
 	{
-		SM_stringg(inform[i]);
+		SM_stringg(environ[l]);
 		SM_charr('\n');
 		l++;
 	}
@@ -27,15 +25,15 @@ void print_information(char **inform)
 */
 int _check(char **argum, int stat, char *commd)
 {
-	char *str1 = "inform";
+	char *str1 = "env";
 	char *str2 = "exit";
 
 	if (SM_scm(str1, argum[0]))
 	{
-		print_information(inform);
+		print_information(environ);
 		return (1);
 	}
-	else if (SM_scm(s2, arg[0]))
+	else if (SM_scm(str2, argum[0]))
 	{
 		f_grid(argum);
 		free(commd);

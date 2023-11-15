@@ -6,7 +6,7 @@
  * @s1: input char 2
  *
  * Return: 0 or 1
-*/
+ */
 int SM_scm(char *s1, char *s2)
 {
 	int i = 0, flag = 0;
@@ -59,7 +59,7 @@ char *SM_scat(char *d, char *s)
 {
 	int i = 0, b;
 
-	while (d[a] != '\0')
+	while (d[i] != '\0')
 		i++;
 	b = 0;
 	while (s[b] != '\0')

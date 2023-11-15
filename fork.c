@@ -17,7 +17,7 @@ int _fork(int status, char *path, char **args, int err)
 	if (id == 0)
 	{
 		execve(path, args, environ);
-		i = handle_int(err);
+		i = SM_handle(err);
 		write(2, "./hsh: ", 7);
 		write(2, i, SM_len(i));
 		write(2, ": ", 2);

@@ -8,7 +8,9 @@
 
 char *our_get_line(void)
 {
-	char *buf = NULL, size_t bufsize = 0, size_t tobyr = 0;
+	char *buf = NULL;
+	size_t bufsize = 0;
+	size_t tobyr = 0;
 	ssize_t by_read;
 	int vvv = tobyr + 64, noui = tobyr - 1;
 
