@@ -1,5 +1,4 @@
 #include "sm.h"
-
 /**
  * place - function that will return actually path
  * @order : the path that will take
@@ -7,8 +6,7 @@
  */
 char *place(char *order)
 {
-	char *pth1 = SM_takeenveloped("PATH");
-	char *pth1copy = NULL;
+	char *pth1 = SM_takeenveloped("PATH"), *pth1copy = NULL;
 	unsigned int s1, s2;
 	struct stat afft;
 	char *pathtoken = NULL, *filepath = NULL;
@@ -32,7 +30,6 @@ char *place(char *order)
 		SM_strcopy(filepath, pathtoken);
 		SM_scat(filepath, "/");
 		SM_scat(filepath, order);
-
 		if (stat(filepath, &afft) == 0)
 		{
 			free(pathcopy);

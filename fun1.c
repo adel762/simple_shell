@@ -1,4 +1,4 @@
-include "sm.h"
+#include "sm.h"
 
 /**
  * SM_charr - function
@@ -10,7 +10,6 @@ int SM_charr(char c)
 {
 	return (write(1, &c, 1));
 }
-
 /**
  * SM_stringg - function
  * @s: string input
@@ -23,12 +22,12 @@ int SM_stringg(char *s)
 
 	if (!s)
 		return (SM_stringg("(null)"));
-	while (s[i])
+	while (s[x])
 	{
-		SM_charr(s[i]);
-		i++;
+		SM_charr(s[x]);
+		x++;
 	}
-	return (i);
+	return (x);
 }
 
 /**

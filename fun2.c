@@ -39,7 +39,7 @@ int SM_stoi(char *s)
  */
 void errors(int er, char *com)
 {
-	char *erro = handle_int(er);
+	char *erro = SM_handle(er);
 
 	write(2, "./hsh: ", 7);
 	write(2, erro, SM_len(erro));
