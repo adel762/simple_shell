@@ -22,7 +22,7 @@ char *miss(char *string, int g);
 char *SM_handle(int l);
 char *SM_strcopy(char *str);
 char *SM_scat(char *d, char *s);
-char *_strtok(char *str, const char *d);
+char *_strtok(char *s, char delim);
 char *SM_string_copy(char *dest, char *src);
 void f_grid(char **g);
 void errors(int er, char *com);

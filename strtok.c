@@ -1,37 +1,30 @@
 #include "sm.h"
 
 /**
- * _strtok - function that split string
- * @str: char 1
- * @d: char2
+ * _strtok - function
+ * @s : string
+ * @delim : char
+ * Return: new string
  *
- * Return: int
  */
-char *_strtok(char *str, const char *d)
+char *_strtok(char *s, char delim)
 {
-	char *token;
+	static char *c;
+	char *start = NULL;
 
-	if (str)
-		token = str;
-	if (!token)
+	if (s != NULL)
+		c = s;
+	if (!c || *c == '\0')
 		return (NULL);
-
-	size_t ts = strspn(token, d);
-
-	if (token[ts] == '\0')
-	{
-		token = NULL;
-		return (NULL);
-	}
-
-	size_t te = strspn(token + ts, d);
-
-	if (token[ts + te] == '\0')
-	{
-		token = NULL;
-		return (token + ts);
-	}
-	token[ts + te] = '\0';
-	token = token + ts + te + 1;
-	return (token + ts);
+	while (*c == delim)
+		c++;
+	start = c;
+	while (*c != '\0' && *c != delim)
+		c++;
+	if (*c == '\0')
+		return (start);
+	*c = '\0';
+	c++;
+	return (start);
 }
+
