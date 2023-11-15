@@ -12,7 +12,7 @@ char *our_get_line(void)
 	size_t bufsize = 0;
 	size_t tobyr = 0;
 	ssize_t by_read;
-	long unsigned int vvv = tobyr + 64, noui = tobyr - 1;
+	unsigned int vvv = tobyr + 64, noui = tobyr - 1;
 
 	while (1)
 	{

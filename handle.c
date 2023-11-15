@@ -26,7 +26,7 @@ char *SM_handle(int l)
 	{
 		u[i] = l % 10 + '0';
 		i++;
-		l/= 10;
+		l /= 10;
 	}
 	fresh = malloc(i + 5);
 	i--;
