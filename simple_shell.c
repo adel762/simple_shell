@@ -37,7 +37,7 @@ int main(void)
 			f_grid(args), free(com);
 			continue;
 		}
-		path = location(args[0]);
+		path = place(args[0]);
 		if (path == NULL)
 		{
 			errors(er, com);

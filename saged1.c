@@ -6,7 +6,7 @@
  */
 char *place(char *order)
 {
-	char *pth1 = _getenv("PATH");
+	char *pth1 = SM_takeenveloped("PATH");
 	char *pth1copy = NULL;
 	unsigned int s1, s2, struct stat afft;
 	char *pathtoken = NULL, *filepath = NULL;
