@@ -1,9 +1,11 @@
 #include "sm.h"
+
 /**
  * SM_strcomp - entry point
  * @strf: sagedryan
  * @stre: moadel
- * @p: idk :),,,kidding ^-^
+ * @p: input
+ *
  * Return: size of @str
  */
 

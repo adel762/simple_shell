@@ -34,5 +34,6 @@ int _fork(int status, char *path, char  **args, int err);
 void fill(char ***arg);
 int fork(int status, char *path,  char **args, int err);
 char *place(char *order);
+int SM_strcomp(char *strf, char *stre, size_t p);
 
 #endif

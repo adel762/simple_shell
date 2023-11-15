@@ -30,12 +30,12 @@ int _check(char **argum, int stat, char *commd)
 	char *str1 = "inform";
 	char *str2 = "exit";
 
-	if (compare_str(str1, argum[0]))
+	if (SM_scm(str1, argum[0]))
 	{
 		print_information(inform);
 		return (1);
 	}
-	else if (compare_str(s2, arg[0]))
+	else if (SM_scm(s2, arg[0]))
 	{
 		f_grid(argum);
 		free(commd);
