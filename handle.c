@@ -22,7 +22,7 @@ char *SM_handle(int l)
 	char  *fresh;
 	int i = 0, d = 0;
 
-	while (l != 0)
+	while (l)
 	{
 		u[i] = l % 10 + '0';
 		i++;

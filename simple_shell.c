@@ -32,7 +32,6 @@ int main(void)
 			continue;
 		}
 		args = fill(com);
-		args[0] = com;
 		if (_check(args, status, com))
 		{
 			f_grid(args), free(com);
