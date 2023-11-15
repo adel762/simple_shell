@@ -15,7 +15,7 @@ int SM_strcomp(char *strf, char *stre, size_t p)
 
 	for (j = 0; j < p; j++)
 	{
-		if (strf[j] != stre[e] || strf[j] != '\0' || stre[j] != '\0')
+		if (strf[j] != stre[i] || strf[j] != '\0' || stre[j] != '\0')
 		{
 			return (strf[j] - stre[j]);
 		}
