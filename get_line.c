@@ -12,7 +12,7 @@ char *our_get_line(void)
 	size_t bufsize = 0;
 	size_t tobyr = 0;
 	ssize_t by_read;
-	int vvv = tobyr + 64, noui = tobyr - 1;
+	long unsigned int vvv = tobyr + 64, noui = tobyr - 1;
 
 	while (1)
 	{
@@ -23,13 +23,14 @@ char *our_get_line(void)
 			if (buf == 0)
 				perror("Memory allocation failed"), exit(EXIT_FAILURE);
 		}
-		by_read = read(STDIN_FILEND, buf + tobyr, 64);
+		by_read = read(STDIN_FILENO, buf + tobyr, 64);
 		if (by_read == -1)
 		{
 			perror("Error reading input"), free(buf), exit(EXIT_FAILURE);
 		}
 		else if (tobyr == 0 && by_read == 0)
-			free(buf), return (NULL);
+			free(buf);
+		return (NULL);
 		tobyr += by_read;
 		if (buf[noui] == '\n')
 			break;
