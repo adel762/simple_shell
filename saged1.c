@@ -1,3 +1,4 @@
+#include "sm.h"
 
 /**
  * place - function that will return actually path
@@ -45,8 +46,6 @@ char *place(char *order)
 	}
 	free(pathcopy);
 	if (stat(order, &afft) == 0)
-	{
 		return (SM_strcopy(order));
-	}
 	return (NULL);
 }
