@@ -8,7 +8,8 @@ char *place(char *order)
 {
 	char *pth1 = SM_takeenveloped("PATH");
 	char *pth1copy = NULL;
-	unsigned int s1, s2, struct stat afft;
+	unsigned int s1, s2;
+	struct stat afft;
 	char *pathtoken = NULL, *filepath = NULL;
 
 	if (!pth1)
@@ -17,22 +18,35 @@ char *place(char *order)
 	if (!pth1copy)
 		return (NULL);
 	pathtoken = _strtok(pth1copy, ':');
-	while (!pathtoken)
+	while (pathtoken != NULL)
 	{
-		s1 = SM_len(order), s2 = SM_len(pathtoken);
+		s1 = SM_len(order);
+		s2 = SM_len(pathtoken);
 		filepath = malloc(s1 + s2 + 8);
 		if (!filepath)
-			free(pathcopy), return (NULL);
+		{
+			free(pathcopy);
+			return (NULL);
+		}
 		SM_strcopy(filepath, pathtoken);
-		SM_scat(filepath, "/"), SM_scat(filepath, order);
+		SM_scat(filepath, "/");
+		SM_scat(filepath, order);
 
 		if (stat(filepath, &afft) == 0)
-			free(pathcopy), return (filepath);
+		{
+			free(pathcopy);
+			return (filepath);
+		}
 		else
-			free(filepath), pathtoken = _strtok(NULL, ':');
+		{
+			free(filepath);
+			pathtoken = _strtok(NULL, ':');
+		}
 	}
 	free(pathcopy);
 	if (stat(order, &afft) == 0)
+	{
 		return (SM_strcopy(order));
+	}
 	return (NULL);
 }
