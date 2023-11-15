@@ -1,4 +1,3 @@
-#include "sm.h"
 
 /**
  * place - function that will return actually path

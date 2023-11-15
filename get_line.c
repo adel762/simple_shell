@@ -1,14 +1,9 @@
 #include "sm.h"
 
 /**
-<<<<<<< HEAD
  * our_get_line - get line func using already read
- * Return: the input as get line func
-=======
- * our_get_line - get line function
  *
- * Return: the input as get line function
->>>>>>> f49226869118e4f311cb1125495bafcec51c7fc8
+ * Return: the input
  */
 
 char *our_get_line(void)
