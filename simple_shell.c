@@ -32,6 +32,7 @@ int main(void)
 			continue;
 		}
 		args = fill(com);
+		args[0] = com;
 		if (_check(args, status, com))
 		{
 			f_grid(args), free(com);
@@ -44,8 +45,8 @@ int main(void)
 			f_grid(args);
 			continue;
 		}
-		free(args[0]), args[0] = path, free(com);
 		status = _fork(status, path, args, er);
+		free(args[0]), args[0] = path, free(com);
 	}
 	return (status);
 }
