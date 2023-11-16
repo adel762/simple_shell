@@ -10,10 +10,8 @@
 
 int main(int c, char **v)
 {
-	char *com, **argv;
+	char *com;
 
-	argv = malloc(sizeof(char *) * 250);
-	fill(&argv);
 	while (1)
 	{
 		com = malloc(1000 * (c / c));
