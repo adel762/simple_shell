@@ -13,7 +13,9 @@ void _fork(char **environ, char **com, char **v)
 	int i = 0;
 	char *t = strtok(*com, " ");
 
-	if (id == 0)
+	if (id < 0)
+		return;
+	else if (id == 0)
 	{
 		while (t != NULL && i < (1000 - 1))
 		{
