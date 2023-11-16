@@ -15,16 +15,17 @@ int main(int c, char **v)
 
 	while (1)
 	{
-		com = malloc(5000000 * (c / c));
+		com = malloc(1000 * (c / c));
 		if (a == 1)
 			SM_stringg("$ ");
-		if (fgets(com, 5000000, stdin) == NULL)
+		if (fgets(com, 1000, stdin) == NULL)
 		{
 			if (a == 1)
 				SM_stringg("\n");
 			free(com);
 			break;
 		}
+		printf("%s", com);
 		if (SM_len(com) == 0)
 		{
 			free(com);

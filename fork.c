@@ -9,13 +9,13 @@
 void _fork(char **environ, char **com, char **v)
 {
 	pid_t id = fork();
-	char *args[5000000];
+	char *args[1000];
 	int i = 0;
 	char *t = strtok(*com, " ");
 
 	if (id == 0)
 	{
-		while (t != NULL && i < (5000000 - 1))
+		while (t != NULL && i < (1000 - 1))
 		{
 			args[i++] = t;
 			t = strtok(NULL, " ");
