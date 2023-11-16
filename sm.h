@@ -29,7 +29,7 @@ void errors(int er, char *com);
 char **fill(char *com);
 void print_information(char **environ);
 int _check(char **argum, int stat, char *commd);
-int _fork(int status, char *path, char  **args, int err);
+void _fork(char **environ, char **com, char **v);
 char *place(char *order);
 int SM_strcomp(char *strf, char *stre, size_t p);
 char *our_get_line(void);

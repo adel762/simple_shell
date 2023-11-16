@@ -2,50 +2,32 @@
 
 /**
  * main - main finction
+ * @c: int input
+ * @v: char input
  *
  * Return: 0 success
  */
 
-int main(void)
+int main(int c, char **v)
 {
-	char **args = NULL, *path = NULL, *com;
-	int status = 0;
-	int er = 0;
+	char *com;
 	int a = isatty(STDIN_FILENO);
 
 	while (1)
 	{
-		er++;
 		if (a)
 			SM_stringg("$ ");
-		com = malloc(5000000);
+		com = malloc(5000000 * (c / c));
 		if (fgets(com, 5000000, stdin) == NULL)
 		{
+			if (a == 1)
+				SM_stringg("\n");
 			free(com);
 				break;
 		}
-		if (com[SM_len(com) - 1] == '\n')
-			com[SM_len(com) - 1] = '\0';
-		if (SM_len(com) == 0)
-		{
-			free(com);
-			continue;
-		}
-		args = fill(com);
-		if (_check(args, status, com))
-		{
-			f_grid(args), free(com);
-			continue;
-		}
-		path = place(args[0]);
-		if (path == NULL)
-		{
-			errors(er, com);
-			f_grid(args);
-			continue;
-		}
-		status = _fork(status, path, args, er);
-		free(args[0]), args[0] = path, free(com);
+		com[strcspn(com, "\n")] = '\0';
+		_fork(environ, &com, v);
+		free(com);
 	}
-	return (status);
+	return (0);
 }

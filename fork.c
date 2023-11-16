@@ -2,36 +2,33 @@
 
 /**
  * _fork - function that handle fork
- * @status: int input
- * @path: the path
- * @args: array of char
- * @err: int input error message
- *
- * Return: int
+ * @com: the path
+ * @v: array of char
+ * @environ: int input error message
  */
-int _fork(int status, char *path, char **args, int err)
+void _fork(char **environ, char **com, char **v)
 {
-	char *i;
 	pid_t id = fork();
+	char *args[5000000];
+	int i = 0;
+	char *t = strtok(*com, " ");
 
 	if (id == 0)
 	{
-		execve(path, args, environ);
-		i = SM_handle(err);
-		write(2, "./hsh: ", 7);
-		write(2, i, SM_len(i));
-		write(2, ": ", 2);
-		write(2, path, SM_len(path));
-		write(2, ": No such file or directory\n", 28);
-		f_grid(args);
-		free(i);
-		exit(127);
+		while (t != NULL && i < (5000000 - 1))
+		{
+			args[i++] = t;
+			t = strtok(NULL, " ");
+		}
+		args[i] = NULL;
+		execve(args[0], args, environ);
+		SM_stringg(v[0]);
+		SM_stringg(": No such file or directory");
+		SM_charr('\n');
+		return;
 	}
 	else
 	{
-		waitpid(id, &status, 0);
-		status = WEXITSTATUS(status);
-		f_grid(args);
+		wait(NULL);
 	}
-	return (status);
 }
