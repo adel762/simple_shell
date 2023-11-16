@@ -26,7 +26,7 @@ char *_strtok(char *s, char delim);
 char *SM_string_copy(char *dest, char *src);
 void f_grid(char **g);
 void errors(int er, char *com);
-char **fill(char *com);
+void fill(char ***argv);
 void print_information(char **environ);
 int _check(char **argum, int stat, char *commd);
 void _fork(char **environ, char **com, char **v);
