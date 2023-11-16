@@ -24,7 +24,7 @@ int main(int c, char **v)
 			free(com);
 			break;
 		}
-		printf("%s", com);
+		/*printf("%s", com);*/
 		if (SM_len(com) == 0)
 		{
 			free(com);
