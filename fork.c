@@ -27,6 +27,8 @@ void _fork(char **environ, char **com, char **v)
 		SM_charr('\n');
 		return;
 	}
+	else if (id < 0)
+		return;
 	else
 	{
 		wait(NULL);

@@ -15,15 +15,20 @@ int main(int c, char **v)
 
 	while (1)
 	{
-		if (a)
-			SM_stringg("$ ");
 		com = malloc(5000000 * (c / c));
+		if (a == 1)
+			SM_stringg("$ ");
 		if (fgets(com, 5000000, stdin) == NULL)
 		{
 			if (a == 1)
 				SM_stringg("\n");
 			free(com);
-				break;
+			break;
+		}
+		if (SM_len(com) == 0)
+		{
+			free(com);
+			continue;
 		}
 		com[strcspn(com, "\n")] = '\0';
 		_fork(environ, &com, v);
