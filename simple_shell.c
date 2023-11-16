@@ -11,16 +11,15 @@
 int main(int c, char **v)
 {
 	char *com;
-	int a = isatty(STDIN_FILENO);
 
 	while (1)
 	{
 		com = malloc(1000 * (c / c));
-		if (a == 1)
+		if (isatty(STDIN_FILENO) == 1)
 			SM_stringg("$ ");
 		if (fgets(com, 1000, stdin) == NULL)
 		{
-			if (a == 1)
+			if (isatty(STDIN_FILENO) == 1)
 				SM_stringg("\n");
 			free(com);
 			break;
